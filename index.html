@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <style>
+        .main {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="preLoader">Loading...</div>
+<div class="main" id="mainContainer" hidden>
+    <img
+            height="100"
+            width="100"
+            id="ProfileImage"
+    />
+    <h2 id="fullName"></h2>
+    <p id="personalBio">Dont allow anyone to feel that you are not good enough.</p>
+    <h5 id="followersInfo"></h5>
+    <p>
+        Check me out on <a id="githubLink">GitHub</a> & <a href="https://www.linkedin.com/in/amar-agrawal-5370a814b/">LinkedIn</a>
+    </p>
+    <a class="twitter-timeline" data-width="300" data-height="400"
+       data-theme="dark" href="https://twitter.com/amar_speaks?ref_src=twsrc%5Etfw">Tweets by amar_speaks</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<script>
+    fetch("https://api.github.com/users/Amar-Ag")
+        .then(response => response.json())
+        .then(function (data) {
+            console.log(data)
+            let followerCount = data['followers']
+            let followerString =  'I am followed on GitHub by ' + followerCount +' people.'
+            document.getElementById('ProfileImage').src=data['avatar_url']
+            document.getElementById('fullName').textContent=data['name']
+            document.getElementById('personalBio').textContent=data['bio']
+            document.getElementById('followersInfo').textContent=followerString
+            document.getElementById('githubLink').href=data['html_url']
+            document.getElementById('preLoader').hidden=true
+            document.getElementById('mainContainer').hidden=false
+        })
+</script>
+</body>
+</html>
