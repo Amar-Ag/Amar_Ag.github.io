@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Amar Agrawal, Amar Agrawal Portfolio">
     <meta name="description" content="Graphic and Designer, R&D manager, R Programmer, soon to be fullstack developer">
-<!--    <link rel="icon" href="">-->
+    <!--    <link rel="icon" href="">-->
     <title>Amar Agrawal|Portfolio</title>
     <style>
         .main {
@@ -37,14 +37,47 @@
         .then(function (data) {
             console.log(data)
             let followerCount = data['followers']
-            let followerString =  'I am followed on GitHub by ' + followerCount +' people.'
-            document.getElementById('ProfileImage').src=data['avatar_url']
-            document.getElementById('fullName').textContent=data['name']
-            document.getElementById('personalBio').textContent=data['bio']
-            document.getElementById('followersInfo').textContent=followerString
-            document.getElementById('githubLink').href=data['html_url']
-            document.getElementById('preLoader').hidden=true
-            document.getElementById('mainContainer').hidden=false
+            let followerString = 'I am followed on GitHub by ' + followerCount + ' people.'
+            document.getElementById('ProfileImage').src = data['avatar_url']
+            document.getElementById('fullName').textContent = data['name']
+            document.getElementById('personalBio').textContent = data['bio']
+            document.getElementById('followersInfo').textContent = followerString
+            document.getElementById('githubLink').href = data['html_url']
+
+            let reposUrl = data['repos_url']
+            const limitPerPage = 20;
+
+            const getRepos = async function (pageNo = 1) {
+
+                let actualUrl = reposUrl + `?page=${pageNo}&limit=${limitPerPage}`;
+                var apiResults = await fetch(actualUrl)
+                    .then(resp => {
+                        return resp.json();
+                    });
+                return apiResults;
+            }
+
+            const getEntireRepos = async function (pageNo = 1) {
+                const results = await getRepos(pageNo);
+                console.log("Retreiving data from API for page : " + pageNo);
+                if (results.length > 0) {
+                    return results.concat(await getEntireRepos(pageNo + 1));
+                } else {
+                    return results;
+                }
+            };
+
+
+            (async () => {
+                const entireList = await getEntireRepos();
+                console.log(entireList);
+                let allRepos = entireList.map(entireList => entireList.name)
+                let allReposLinks = entireList.map(entireList => entireList.html_url)
+                console.log(allRepos)
+                console.log(allReposLinks)
+            })();
+            document.getElementById('preLoader').hidden = true
+            document.getElementById('mainContainer').hidden = false
         })
 </script>
 </body>
