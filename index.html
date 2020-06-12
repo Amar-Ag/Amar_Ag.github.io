@@ -7,29 +7,127 @@
     <meta name="description" content="Graphic and Designer, R&D manager, R Programmer, soon to be fullstack developer">
     <!--    <link rel="icon" href="">-->
     <title>Amar Agrawal|Portfolio</title>
-    <style>
-        .main {
-            text-align: center;
-        }
-    </style>
+    <!--    <style>-->
+    <!--        .main {-->
+    <!--            text-align: center;-->
+    <!--        }-->
+    <!--    </style>-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
 </head>
 <body>
-<div id="preLoader">Loading...</div>
-<div class="main" id="mainContainer" hidden>
-    <img
-            height="100"
-            width="100"
-            id="ProfileImage"
-    />
-    <h2 id="fullName"></h2>
-    <p id="personalBio"></p>
-    <h5 id="followersInfo"></h5>
-    <p>
-        Check me out on <a id="githubLink">GitHub</a> & <a href="https://www.linkedin.com/in/amar-agrawal-5370a814b/">LinkedIn</a>
-    </p>
-    <a class="twitter-timeline" data-width="300" data-height="400"
-       data-theme="dark" href="https://twitter.com/amar_speaks?ref_src=twsrc%5Etfw">Tweets by amar_speaks</a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!--<div id="preLoader">Loading...</div>-->
+    
+    <div class="sidenav">
+        <div class="sidenav-profile ">
+            <img id="ProfileImage"/>
+            <h2 id="fullName"></h2>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+             <li><a href="#project">My Repositories</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul class="social-media-link">
+            <li>GitHub Followers <span id="followersInfo"></span></li>
+            <li>
+                Check me out on<br>
+                 <a id="githubLink">GitHub</a> <a href="https://www.linkedin.com/in/amar-agrawal-5370a814b/">LinkedIn</a>
+            </li>
+            <div class="tweets">
+                <a class="twitter-timeline" data-width="400px" data-height="200px"
+                   data-theme="light" href="https://twitter.com/amar_speaks?ref_src=twsrc%5Etfw">Tweets by
+                    amar_speaks</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </ul>
+    </div>
+
+<div class="main" id="mainContainer">
+    <div class="content" id="home">
+        <div class="responiveNav">
+            <img id="ResponsiveProfileImage"/>
+            <h2 id="ResponsivefullName"></h2>
+        </div>
+
+        <div class="bio">
+            <p id="personalBio"></p>
+            <p class="social-link">
+                Check me out on
+                <a href="https://www.linkedin.com/in/amar-agrawal-5370a814b/">LinkedIn</a>
+            </p>
+        </div>
+
+        <!--        <h5 id="followersInfo"></h5>-->
+    </div>
+    <div class="content" id="about">
+        <h2 class="home-title-for-all"><span>About</span> Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+    </div>
+    <div class="content" id="skills">
+        <h2 class="home-title-for-all"><span>My</span> Skills</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+    </div>
+    <div class="content" id="project">
+        <h2 class="home-title-for-all"><span>My</span> Repositories</h2>
+        <div id="personalReposList">
+
+        </div>
+        <div id="Reposlinks">
+
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+    </div>
+    <div class="content" id="contact">
+        <h2 class="home-title-for-all"><span>Contact</span> Me</h2>
+        <div class="container">
+          <form action="action_page.php">
+
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="email">Your Email</label>
+            <input type="text" id="email" name="email" placeholder="Your Email..">
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:140px"></textarea>
+
+            <input type="submit" value="Submit">
+
+          </form>
+        </div>
+    </div>
 </div>
 <script>
     fetch("https://api.github.com/users/Amar-Ag")
@@ -37,11 +135,13 @@
         .then(function (data) {
             console.log(data)
             let followerCount = data['followers']
-            let followerString = 'I am followed on GitHub by ' + followerCount + ' people.'
+            // let followerString = 'I am followed on GitHub by ' + followerCount + ' people.'
             document.getElementById('ProfileImage').src = data['avatar_url']
+            document.getElementById('ResponsiveProfileImage').src = data['avatar_url']
             document.getElementById('fullName').textContent = data['name']
+            document.getElementById('ResponsivefullName').textContent = data['name']
             document.getElementById('personalBio').textContent = data['bio']
-            document.getElementById('followersInfo').textContent = followerString
+            document.getElementById('followersInfo').textContent = followerCount
             document.getElementById('githubLink').href = data['html_url']
 
             let reposUrl = data['repos_url']
@@ -75,10 +175,17 @@
                 let allReposLinks = entireList.map(entireList => entireList.html_url)
                 console.log(allRepos)
                 console.log(allReposLinks)
+                document.getElementById('personalReposList').textContent=allRepos
+                document.getElementById('Reposlinks').textContent=allReposLinks
+
             })();
             document.getElementById('preLoader').hidden = true
             document.getElementById('mainContainer').hidden = false
+
+
         })
 </script>
+<script src="js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>
